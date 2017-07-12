@@ -11,7 +11,7 @@ iface eth2
     
 
 auto uplink
-iface uplink 
+iface uplink inet static
     address 172.16.1.102/24
     bond-slaves eth1 eth2
     bond-mode 802.3ad
