@@ -1,0 +1,55 @@
+---
+- hosts: spines:leafs
+  user: cumulus
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: copy interfaces
+      copy: src=mlag/{{ansible_hostname}}/interfaces dest=/etc/network/
+    - name: copy Quagga daemons
+      copy: src=mlag/{{ansible_hostname}}/daemons dest=/etc/quagga/
+    - name: copy Quagga configuration
+      copy: src=mlag/{{ansible_hostname}}/Quagga.conf dest=/etc/quagga/
+    - name: reload networking
+      command: ifreload -a
+    - name: reload quagga
+      service: name=quagga state=restarted
+
+- hosts: mgmtserver:workerservers
+  user: cumulus
+  become: yes
+  become_method: sudo
+  roles:
+    - install-docker-ifupdown2
+
+- hosts: mgmtserver:workerservers
+  user: cumulus
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: copy interfaces
+      copy: src=mlag/{{ansible_hostname}}/interfaces dest=/etc/network/
+    - name: reload networking
+      command: ifreload -a
+
+- hosts: mgmtserver
+  user: cumulus
+  become: yes
+  become_method: sudo
+  roles:
+    - initiate-swarm-manager
+    - obtain-swarm-token
+
+- hosts: workerservers
+  user: cumulus
+  become: yes
+  become_method: sudo
+  roles:
+     - join-the-swarm
+
+- hosts: mgmtserver
+  user: cumulus
+  become: yes
+  become_method: sudo
+  roles:
+     - create-service
