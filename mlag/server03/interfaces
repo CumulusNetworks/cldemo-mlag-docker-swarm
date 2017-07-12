@@ -15,7 +15,7 @@ auto uplink
 iface uplink 
     address 172.16.2.101/24
     mtu 9216
-    bond-slaves none
+    bond-slaves eth1 eth2
     bond-mode 802.3ad
     bond-miimon 100
     bond-lacp-rate 1
