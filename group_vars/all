@@ -54,34 +54,26 @@ interfaces:
         swp3:
         swp4:
     server01:
-      loopback: "10.0.0.31"
-      asn: 65031
+      uplink: "172.16.1.101"
       redistribute: "connected"
       neighbors:
         eth1:
         eth2:
-      docker_network: network_a
     server02:
-      loopback: "10.0.0.32"
-      asn: 65032
+      uplink: "172.16.1.102"
       redistribute: "connected"
       neighbors:
         eth1:
         eth2:
-      docker_network: network_b
     server03:
-      loopback: "10.0.0.33"
-      asn: 65033
+      uplink: "172.16.2.101"
       redistribute: "connected"
       neighbors:
         eth1:
         eth2:
-      docker_network: network_c
     server04:
-      loopback: "10.0.0.34"
-      asn: 65034
+      uplink: "172.16.2.102"
       redistribute: "connected"
       neighbors:
         eth1:
         eth2:
-      docker_network: network_d
