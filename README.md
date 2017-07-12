@@ -21,7 +21,6 @@ On Spines and Leafs:
 On Servers:
 
  - Ubuntu 16.04 Docker-CE v17.05 
- - cumulusnetworks/quagga:latest (container image)
  - apache (container image)
   
 
