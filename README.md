@@ -1,4 +1,4 @@
-This demo shows one of several different approaches to running Docker. This approach uses Docker Swarm to create VXLAN tunnels between the servers.   Extra redundancy to the hosts is provided using Cumulus MLAG between the leafs and the servers.  GGP unnumbered is configured between the leafs and the spines. 
+This demo shows one of several different approaches to running Docker. This approach uses Docker Swarm to create VXLAN tunnels between the servers.   Extra redundancy to the hosts is provided using Cumulus MLAG between the leafs and the servers.  BGP unnumbered is configured between the leafs and the spines. 
 
 The virtual setup is depicted below:
 ![Virtual  Demo Topology](https://github.com/CumulusNetworks/cldemo-mlag-docker-swarm/blob/master/cldemo-mlag-docker-swarm.png)
