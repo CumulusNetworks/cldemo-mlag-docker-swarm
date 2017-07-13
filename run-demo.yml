@@ -14,7 +14,7 @@
       command: ifreload -a
     - name: reload quagga
       service: name=quagga state=restarted
-    - name:  wr mem the quagga configuration
+    - name:  wr the quagga configuration
       command: vtysh -c "wr"
 
 - hosts: mgmtserver:workerservers
