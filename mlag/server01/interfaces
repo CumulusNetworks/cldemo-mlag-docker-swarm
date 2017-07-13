@@ -3,11 +3,11 @@ iface eth0 inet dhcp
 
 auto eth1
 iface eth1 
-
+  post-up ip link set $IFACE promisc on     # Only required on Virtualbox
 
 auto eth2
 iface eth2 
-
+  post-up ip link set $IFACE promisc on     # Only required on Virtualbox
 
 auto uplink
 iface uplink inet static
