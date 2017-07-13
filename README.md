@@ -16,7 +16,7 @@ Software in Use:
 
 On Spines and Leafs:
 
- - Cumulus v3.3.0
+ - Cumulus v3.3.2
 
 On Servers:
 
