@@ -23,6 +23,7 @@
   become_method: sudo
   roles:
     - install-docker-ifupdown2
+    - install ifreload-a-fix
 
 - hosts: mgmtserver:workerservers
   user: cumulus
