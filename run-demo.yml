@@ -34,7 +34,10 @@
     - name: copy interfaces
       copy: src=mlag/{{ansible_hostname}}/interfaces dest=/etc/network/
     - name: reload networking
-      command: ifreload -a
+      command: >
+        ifup eth1;
+        ifup eth2;
+        ifreload -a
 
 - hosts: mgmtserver
   user: cumulus
