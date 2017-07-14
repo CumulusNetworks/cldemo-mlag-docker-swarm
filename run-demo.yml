@@ -23,7 +23,8 @@
   become_method: sudo
   roles:
     - install-docker-ifupdown2
-    - install ifreload-a-fix
+    - ifreload-a-fix
+    - install-bonding-driver
 
 - hosts: mgmtserver:workerservers
   user: cumulus
