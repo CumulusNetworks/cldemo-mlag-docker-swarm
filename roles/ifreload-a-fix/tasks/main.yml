@@ -1,2 +1,3 @@
+---
 - name: allow ifreload -a to work on Ubuntu
   shell:  sed -i '/\[Service\]/a RemainAfterExit=yes' /lib/systemd/system/networking.service
