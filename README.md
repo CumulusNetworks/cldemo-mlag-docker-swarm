@@ -7,7 +7,7 @@ A docker swarm management node [server01] is configured and 3 additional worker 
 
 When a worker node joins a swarm, Docker Swarm creates VXLAN tunnels between the worker node and the other worker and management node[s] for inter-container, inter-node communication using the overlay driver.  The VTEPs are on the servers. In this demo, the VTEPs are configured to be the server mlag bond IP addresses.  Docker Swarm also uses the bridge driver on a network called docker_gwbridge to access the containers from outside the vxlan.  
 
-The management node [Server01] then creates an apache service [ 3 instances of apache containers] on the worker nodes (which may include server01). (If more are required, edit the /group_vars/all file services.replicas value in the playbook)
+The management node [Server01] then creates an apache service [ 3 instances of apache containers] on the worker nodes (which may include server01). (If more are required, edit the /group_vars/all file services.replicas value in the playbook after you have cloned it locally)
 
 We can access the replicated apache containers from either outside the VXLAN via CURL on port 8080, and/or access within the VXLAN (container to container) via ping. 
 
