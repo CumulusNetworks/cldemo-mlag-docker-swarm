@@ -45,6 +45,7 @@ iface peerlink.4094
 
 auto server03
 iface server03
+    bond-lacp-bypass-allow yes
     bond-slaves swp1
     bridge-access 20
     clag-id 3
@@ -52,6 +53,7 @@ iface server03
 
 auto server04
 iface server04
+    bond-lacp-bypass-allow yes
     bond-slaves swp2
     clag-id 4
     bridge-access 20
