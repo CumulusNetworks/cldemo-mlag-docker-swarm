@@ -9,8 +9,8 @@ auto eth2
 iface eth2 
    post-up ip link set $IFACE promisc on     # Only required on VirtualboX
 
-auto uplink
-iface uplink inet static
+auto bond1
+iface bond1 inet static
     address 172.16.2.102/24
     bond-slaves eth1 eth2
     bond-mode 802.3ad
