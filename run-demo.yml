@@ -52,10 +52,10 @@
   tasks:
     - name: copy interfaces
       copy: src=mlag/{{ansible_hostname}}/interfaces dest=/etc/network/
-    - name: bring up eth1
-      command: ifup eth1
-    - name: bring up eth2
-      command: ifup eth2
+   # - name: bring up eth1
+   #   command: ifup eth1
+   #  - name: bring up eth2
+   #   command: ifup eth2
     - name: reload networking
       command:  ifreload -a
 
