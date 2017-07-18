@@ -29,7 +29,7 @@
 - hosts: spines:leafs
   user: cumulus
   become: yes
-  become_methos: sudo 
+  become_method: sudo 
   roles:
     - mv_ntp_mgmt_vrf
 
