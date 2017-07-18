@@ -1,5 +1,5 @@
 ---
 - name: install ifenslave package
-      apt: name={{ item }} update_cache=yes
-      with_items:
-        - ifenslave-2.6
+  apt: name={{ item }} update_cache=yes
+  with_items:
+    - ifenslave-2.6
