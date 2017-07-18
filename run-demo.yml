@@ -12,13 +12,13 @@
       copy: src=mlag/{{ansible_hostname}}/Quagga.conf dest=/etc/quagga/
     - name:  wr the quagga configuration
       command: vtysh -c "wr"
-    - name:  restart the machine and wait for it to come back
-      shell: nohup bash -c 'sleep 2 && shutdown -r now "Ansible kernel update applied"' &
-      become: true
+    - name: restarts switches with their new configuration
+      shell: sleep 1 && shutdown -r 0
       async: 1
       poll: 0
       ignore_errors: true
-      local_action: wait_for host={{ inventory_hostname }} port=22 state=started delay=30 timeout=300  
+    - name: Wait for switches to come back up
+      local_action: wait_for port=22 host="{{ inventory_hostname }}" search_regex=OpenSSH delay=10  
       #name: reload networking
       #command: ifreload -a
     #- name: reload quagga
