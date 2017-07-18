@@ -42,6 +42,7 @@
   roles:
     - install-docker-ifupdown2
     - ifreload-a-fix
+    - install-ifenslave
     - install-bonding-driver
 
 - hosts: mgmtserver:workerservers
