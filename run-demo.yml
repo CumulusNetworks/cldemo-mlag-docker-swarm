@@ -25,6 +25,13 @@
     #  service: name=quagga state=restarted
     #- name:  wr the quagga configuration
     #  command: vtysh -c "wr"
+    
+- hosts: spines:leafs
+  user: cumulus
+  become: yes
+  become_methos: sudo 
+  roles:
+    - mv_ntp_mgmt_vrf
 
 - hosts: mgmtserver:workerservers
   user: cumulus
