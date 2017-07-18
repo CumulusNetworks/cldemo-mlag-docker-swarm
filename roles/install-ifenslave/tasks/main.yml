@@ -1,3 +1,5 @@
+
+# only when using ifupdown1
 ---
 - name: install ifenslave package
   apt: name={{ item }} update_cache=yes
