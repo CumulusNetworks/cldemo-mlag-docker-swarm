@@ -4,7 +4,8 @@ iface lo inet loopback
 
 auto eth0
 iface eth0 inet dhcp
-
+   vrf mgmt
+   
 auto swp1
 iface swp1
 
@@ -30,6 +31,12 @@ iface bridge
     bridge-ports peerlink server01 server02
     bridge-vids 10
     bridge-vlan-aware yes
+    
+auto mgmt
+iface mgmt
+    address 127.0.0.1/8
+    vrf-table auto
+
 
 auto peerlink
 iface peerlink
