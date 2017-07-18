@@ -12,7 +12,7 @@
       copy: src=mlag/{{ansible_hostname}}/Quagga.conf dest=/etc/quagga/
     - name:  wr the quagga configuration
       command: vtysh -c "wr"
-    - name: restart the machine and wait for it to come back
+    - name:  restart the machine and wait for it to come back
       shell: nohup bash -c 'sleep 2 && shutdown -r now "Ansible kernel update applied"' &
       become: true
       async: 1
