@@ -44,8 +44,8 @@ iface peerlink
 auto peerlink.4094
 iface peerlink.4094
     address 169.254.1.2/30
-    clagd-backup-ip 192.168.0.14
-    clagd-peer-ip 10.0.0.14
+    clagd-backup-ip 10.0.0.13
+    clagd-peer-ip 169.254.1.1
     clagd-priority 2000
     clagd-sys-mac 44:38:39:ff:00:01
 
