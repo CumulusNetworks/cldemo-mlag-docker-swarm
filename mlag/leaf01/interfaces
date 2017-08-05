@@ -56,7 +56,8 @@ iface server01
     bridge-access 10
     clag-id 1
     mstpctl-bpduguard yes
-
+    mstpctl-portadminedge yes
+    
 auto server02
 iface server02
     bond-lacp-bypass-allow yes
@@ -64,7 +65,8 @@ iface server02
     bridge-access 10
     clag-id 2
     mstpctl-bpduguard yes
-
+    mstpctl-portadminedge yes
+    
 auto vlan10
 iface vlan10
     address 172.16.1.2/24
