@@ -19,5 +19,5 @@ iface bond1 inet static
     bond-min-links 1
     bond-xmit-hash-policy layer3+4
     post-up ip route add 172.16.0.0/16 via 172.16.1.1
-    post-up ip route add 10.0.0.16/8 via 172.16.1.1
+    post-up ip route add 10.0.0.0/16 via 172.16.1.1
 
