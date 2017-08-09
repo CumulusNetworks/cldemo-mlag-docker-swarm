@@ -20,7 +20,8 @@ On Spines and Leafs:
 
 On Servers:
 
- - Ubuntu 16.04 Docker-CE v17.05 
+ - Ubuntu 16.04 
+ - Docker-CE v17.05 
  - apache (container image)
   
 
