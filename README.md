@@ -63,9 +63,9 @@ View the Services:
     zajgxoinvvb9        apache_web          replicated          3/3                 php:5.6-apache      *:8080->80/tcp
     
 
-Curl to the service from a leaf node using port 8080 [10.0.0.32 is loopback of server02]
+Curl to the service from a leaf node using port 8080 [10.0.0.32 is loopback of server02] from the default VRF:
 
-    cumulus@leaf01:~$ curl 10.0.0.32:8080
+    cumulus@leaf01:mgmt-vrf:~$ sudo vrf task exec default curl 10.0.0.32:8080
     
 
 Check Container Interfaces:
